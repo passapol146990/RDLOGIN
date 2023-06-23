@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">.
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDKLS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body id="body">
+    <div class="container text-center mt-2">
+        <a class="btn btn-danger mb-2" href="/">กลับหน้าหลัก</a>
+        <div class="card p-2 border border-black">
+            <h3>เช็คชื่อ <%= time %>/ปี <%= floor %>
+            </h3>
+            <div>
+                <a style="display: block;" class="mb-2 btn btn-primary" target="_blank" href=<%=data[0] %> >หมู่1</a>
+                <a style="display: block;" class="mb-2 btn btn-primary" target="_blank" href=<%=data[1] %> >หมู่2</a>
+                <a style="display: block;" class="mb-2 btn btn-primary" target="_blank" href=<%=data[2] %> >หมู่3</a>
+                <a style="display: block;" class="mb-2 btn btn-primary" target="_blank" href=<%=data[3] %> >หมู่4</a>
+                <a style="display: block;" class="mb-2 btn btn-primary" target="_blank" href=<%=data[4] %> >หมู่5</a>
+                <a style="display: block;" class="mb-2 btn btn-primary" target="_blank" href=<%=data[5] %> >หมู่6หญิง</a>
+            </div>
+        </div>
+        <div class="text-center">
+            <button id="teem" class="mt-3 form-control btn btn-dark">มืด</button>
+        <button id="teem1" class="mt-3 form-control btn btn-light">สว่าง</button>
+        </div>
+    </div>
+    <script>
+        const teem = document.getElementById('teem');
+        const teem1 = document.getElementById('teem1');
+        const body = document.getElementById('body');
+        teem1.style.display = 'none';
+        teem.addEventListener('click', () =>{
+            teem.style.display = 'none';
+            teem1.style.display = 'block';
+            body.classList = 'bg-dark'
+        })
+        teem1.addEventListener('click', () =>{
+            teem.style.display = 'block';
+            teem1.style.display = 'none';
+            body.classList = 'bg-white'
+        })
+    </script>
+</body>
+
+</html>

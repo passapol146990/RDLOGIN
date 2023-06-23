@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+
+    <link rel="icon"
+        href="https://scontent.fbkk12-3.fna.fbcdn.net/v/t39.30808-6/303728535_561724082417721_7157467355267743191_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGhHpjJrYl9V-2dQrBBYBP9gh2fIEyzjHmCHZ8gTLOMeZhUbRgdBKafZMrC5dgu_seLvVeSF9tYoWofOLrFp7MN&_nc_ohc=uy2-xX2BXtMAX_5UNcO&_nc_ht=scontent.fbkk12-3.fna&oh=00_AfCIFhUcxILql0h-DvpS2UgGi8RVW0MZ3z6mfsIf7hdosQ&oe=644186B4">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title">KLS RD LOGIN</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+
+        .end {
+            justify-content: flex-end;
+            margin-right: 3%;
+        }
+
+        .google-font {
+            font-family: 'Rubik Dirt', cursive;
+        }
+
+        span.size-48 {
+            cursor: pointer;
+            font-size: 100px;
+            font-variation-settings: 'OPSZ' 48;
+            align-items: center;
+        }
+
+        .mg-100 {
+            margin-top: 100px;
+        }
+
+        .mg-500 {
+            margin-top: 500px;
+        }
+
+        .div-400 {
+            height: 30rem;
+        }
+
+        /* nav{
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+        .bold-10 {
+            font-weight: bold;
+        }
+
+        /* button{
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+} */
+        .center {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .boximg-200 {
+            margin-top: 2rem;
+            width: 95%;
+            border-radius: 15px;
+            border: 2px solid #fff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .center_e {
+            position: absolute;
+            border-radius: 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* width: 300px;
+    height: auto; */
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .center_e label {
+            margin-bottom: 10px;
+        }
+
+        .center_e input {
+            /* padding: 5px; */
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 3px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .item-box {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .success {
+            padding: 0.5rem 2rem;
+            border: none;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+        }
+
+        .box-Edit {
+            box-shadow: 0 0 5px rgba(0, 0, 0, 08);
+            border-radius: 10px;
+        }
+
+        .item-list ul li {
+            margin-bottom: 5px;
+        }
+
+        .item-list ul li a {
+            padding: 0.2% 20px;
+            border-radius: 7px;
+            margin-bottom: 50px;
+            border: 2px solid rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div class="center_e" id="center">
+        <div class="item-box">
+            <div style="text-align: center">
+                <label>KLS RD LOGIN</label>
+            </div>
+            <form method="POST" action="/login">
+                <div>
+                    <label>Username :</label>
+                    <input type="text" name="Username" id="Username" placeholder="Username..." />
+                </div>
+                <div>
+                    <label>Password :</label>
+                    <input type="text" name="Password" id="Password" placeholder="Password..." />
+                </div>
+                <div>
+                    <label>เลือกชั้นปี :</label>
+                    <select name="floor">
+                        <option value="1">ปี1</option>
+                        <option value="2">ปี2</option>
+                        <option value="3">ปี3</option>
+                    </select>
+                    <label>เลือกช่วงเวลา :</label>
+                    <select name="timing">
+                        <option value="เช้า">เช้า</option>
+                        <option value="บ่าย">บ่าย</option>
+                    </select>
+                </div>
+                <button id="ok" class="success">success</button>
+            </form>
+        </div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const context = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const binaryCode = "KLS RD Welcome";
+        const binaryCodeLength = binaryCode.length;
+        const fontSize = 12;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+
+        for (let x = 0; x < columns; x++) {
+            drops[x] = Math.random() * canvas.height;
+        }
+
+        function draw() {
+            context.fillStyle = "rgba(0, 0, 0, 0.05)";
+            context.fillRect(0, 0, canvas.width, canvas.height);
+
+            context.fillStyle = "#0F0";
+            context.font = fontSize + "px arial";
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = binaryCode[Math.floor(Math.random() * binaryCodeLength)];
+                context.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+
+        const form = document.querySelector("form");
+        const center = document.getElementById("center");
+    </script>
+</body>
+
+</html>
